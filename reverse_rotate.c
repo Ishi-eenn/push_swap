@@ -1,42 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/20 00:27:58 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/20 21:20:41 by tsishika         ###   ########.fr       */
+/*   Created: 2023/06/20 14:01:46 by tsishika          #+#    #+#             */
+/*   Updated: 2023/06/20 14:01:47 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-#include <stdlib.h>
-#include <limits.h>
-
-typedef struct s_node
-{
-	int				content;
-	struct s_node	*next;
-	struct s_node	*prev;
-}	t_node;
-
-typedef struct s_stack
-{
-	int				size;
-	struct s_node	*top;
-	struct s_node	*bottom;
-}	t_stack;
-
-typedef struct s_arg
-{
-	int				pivot[2];
-	struct s_stack	*a;
-	struct s_stack	*b;
-}	t_arg;
-
-t_node	*ft_lstnew(int content);
-
-#endif
