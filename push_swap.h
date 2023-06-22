@@ -6,13 +6,14 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 00:27:58 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/20 21:45:39 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/06/22 10:17:10 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+#include <unistd.h>
 #include <stdlib.h>
 #include <limits.h>
 
@@ -42,5 +43,8 @@ t_node	*ft_pop(t_stack *stack);
 t_stack	*ft_stacknew(void);
 void	ft_push(t_stack *stack, t_node *node);
 void	ft_pushback(t_stack *stack, t_node *node);
+
+int	ft_isspace(char c);
+int	ft_isdigit(int c);
 
 #endif
