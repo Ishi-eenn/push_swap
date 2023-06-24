@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 14:01:43 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/21 16:41:58 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/06/24 10:31:51 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ int	ft_judge_push(t_arg *arg, char type, int print)
 
 	if (type == 'a')
 	{
-		result = pa(arg);
+		result = ft_push_a(arg);
 		if (result != 0 && print != 0)
 			ft_putstr_fd("pa\n", 1);
 	}
 	if (type == 'b')
 	{
-		result = pb(arg);
+		result = ft_push_b(arg);
 		if (result != 0 && print != 0)
 			ft_putstr_fd("pb\n", 1);
 	}
