@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 21:18:17 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/24 22:36:12 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/06/24 22:40:48 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,3 @@ char	*get_next_line(int fd)
 		save[fd] = ft_clear(line);
 	return (line);
 }
-

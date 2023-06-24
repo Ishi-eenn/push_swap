@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 20:45:50 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/24 22:36:28 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/06/24 22:40:28 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,28 +42,28 @@ typedef struct s_arg
 	int				pivot[2];
 }	t_arg;
 
-int	ft_check_push(t_arg *arg, char *line);
-int	ft_check_swap(t_arg *arg, char *line);
-int	ft_check_rotate(t_arg *arg, char *line);
-int	ft_check_rrotate(t_arg *arg, char *line);
+int		ft_check_push(t_arg *arg, char *line);
+int		ft_check_swap(t_arg *arg, char *line);
+int		ft_check_rotate(t_arg *arg, char *line);
+int		ft_check_rrotate(t_arg *arg, char *line);
 void	ft_free(t_arg *arg);
 void	get_stack_args(t_arg *arg, int argc, char *argv[]);
 void	check_sorted(t_arg *arg);
 void	check_overlap(t_arg *arg);
-int	ft_isspace(char c);
-int	ft_isdigit(int c);
+int		ft_isspace(char c);
+int		ft_isdigit(int c);
 size_t	ft_strlen(const char *s);
 void	ft_putstr_fd(char *s, int fd);
-int	ft_judge_push(t_arg *arg, char type, int print);
-int	ft_judge_reverse_rotate(t_arg *arg, char type, int print);
-int	ft_judge_rotate(t_arg *arg, char type, int print);
-int	ft_judge_swap(t_arg *arg, char type, int print);
+int		ft_judge_push(t_arg *arg, char type, int print);
+int		ft_judge_reverse_rotate(t_arg *arg, char type, int print);
+int		ft_judge_rotate(t_arg *arg, char type, int print);
+int		ft_judge_swap(t_arg *arg, char type, int print);
 t_node	*ft_lstnew(int data);
 t_stack	*ft_stacknew(void);
 void	ft_pushback(t_stack *stack, t_node *node);
 void	ft_push(t_stack *stack, t_node *node);
 t_node	*ft_pop(t_stack *stack);
-int	ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
 char	*ft_strjoin(char const *s1, char const *s2);

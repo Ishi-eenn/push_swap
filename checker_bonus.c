@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 21:01:57 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/24 22:36:01 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/06/24 22:40:38 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ static void	ft_do_sort(t_arg *arg)
 		line = get_next_line(0);
 		if (!line)
 			ft_check_sorted(arg);
-		result = ft_check_push(arg, line) + ft_check_swap(arg, line) + \
-			ft_check_rotate(arg, line) + ft_check_rrotate(arg, line);
+		result = ft_check_push(arg, line) + ft_check_swap(arg, line)
+			+ ft_check_rotate(arg, line) + ft_check_rrotate(arg, line);
 		free(line);
 		if (result != 1)
 			print_error(arg);
