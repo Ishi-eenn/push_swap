@@ -1,60 +1,66 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   swap_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/18 12:43:51 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/24 22:36:40 by tsishika         ###   ########.fr       */
+/*   Created: 2023/06/24 20:48:13 by tsishika          #+#    #+#             */
+/*   Updated: 2023/06/24 22:36:44 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
-static int	ft_rotate_a(t_arg *arg)
+static int	ft_swap_a(t_arg *arg)
 {
-	t_node	*node;
+	t_node	*node1;
+	t_node	*node2;
 
 	if (arg->a->size < 2)
 		return (0);
-	node = ft_pop(arg->a);
-	ft_pushback(arg->a, node);
+	node1 = ft_pop(arg->a);
+	node2 = ft_pop(arg->a);
+	ft_push(arg->a, node1);
+	ft_push(arg->a, node2);
 	return (1);
 }
 
-static int	ft_rotate_b(t_arg *arg)
+static int	ft_swap_b(t_arg *arg)
 {
-	t_node	*node;
+	t_node	*node1;
+	t_node	*node2;
 
 	if (arg->b->size < 2)
 		return (0);
-	node = ft_pop(arg->b);
-	ft_pushback(arg->b, node);
+	node1 = ft_pop(arg->b);
+	node2 = ft_pop(arg->b);
+	ft_push(arg->b, node1);
+	ft_push(arg->b, node2);
 	return (1);
 }
 
-int	ft_judge_rotate(t_arg *arg, char type, int print)
+int	ft_judge_swap(t_arg *arg, char type, int print)
 {
 	int	result;
 
 	if (type == 'a')
 	{
-		result = ft_rotate_a(arg);
+		result = ft_swap_a(arg);
 		if (result != 0 && print != 0)
-			ft_putstr_fd("ra\n", 1);
+			ft_putstr_fd("sa\n", 1);
 	}
 	if (type == 'b')
 	{
-		result = ft_rotate_b(arg);
+		result = ft_swap_b(arg);
 		if (result != 0 && print != 0)
-			ft_putstr_fd("rb\n", 1);
+			ft_putstr_fd("sb\n", 1);
 	}
-	if (type == 'r')
+	if (type == 's')
 	{
-		result = ft_rotate_a(arg) + ft_rotate_b(arg);
-		if (result == 2 && print != 0)
-			ft_putstr_fd("rr\n", 1);
+		result = ft_swap_a(arg) + ft_swap_b(arg);
+		if (result != 0 && print != 0)
+			ft_putstr_fd("ss\n", 1);
 	}
-	return (1);
+	return (0);
 }

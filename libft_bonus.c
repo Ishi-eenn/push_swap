@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.c                                            :+:      :+:    :+:   */
+/*   libft_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/24 19:53:50 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/24 22:36:20 by tsishika         ###   ########.fr       */
+/*   Created: 2023/06/24 20:55:17 by tsishika          #+#    #+#             */
+/*   Updated: 2023/06/24 22:36:14 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 int	ft_isspace(char c)
 {
@@ -24,6 +24,22 @@ int	ft_isdigit(int c)
 	if ('0' <= c && c <= '9')
 		return (1);
 	return (0);
+}
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	size_t			i;
+	unsigned char	*buff_s1;
+	unsigned char	*buff_s2;
+
+	i = 0;
+	buff_s1 = (unsigned char *)s1;
+	buff_s2 = (unsigned char *)s2;
+	while (i < n && buff_s1[i] != '\0' && (buff_s1[i] == buff_s2[i]))
+		i++;
+	if (i == n)
+		return (0);
+	return ((int)(buff_s1[i] - buff_s2[i]));
 }
 
 static void	ft_putchar_fd(char c, int fd)
