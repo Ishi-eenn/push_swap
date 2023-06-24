@@ -1,5 +1,8 @@
 {
 	"files.associations": {
-		"limits.h": "c"
+		"limits.h": "c",
+		"push_swap.h": "c",
+		"array": "c",
+		"vector": "c"
 	}
 }
