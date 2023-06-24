@@ -6,16 +6,15 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 13:09:43 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/24 22:36:48 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/06/25 03:43:42 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_error(int code, t_arg *arg)
+void	print_error(t_arg *arg)
 {
-	if (code == 1)
-		write(1, "Error\n", 6);
+	write(1, "Error\n", 6);
 	ft_free(arg);
 	exit(1);
 }

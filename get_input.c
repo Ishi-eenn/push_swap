@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 17:20:47 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/24 22:36:07 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/06/24 23:38:58 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	ft_atoc(const char *str, t_arg *arg, int *index)
 	}
 	result = result * (sign);
 	if (len > 10 || result < INT_MIN || result > INT_MAX || len == 0)
-		print_error(1, arg);
+		print_error(arg);
 	return ((int)result);
 }
 
@@ -54,12 +54,12 @@ void	get_stack_args(t_arg *arg, int argc, char *argv[])
 				break ;
 			if (ft_isdigit(argv[i][j]) == 0
 			&& argv[i][j] != '-' && argv[i][j] != '+')
-				print_error(1, arg);
+				print_error(arg);
 			ft_pushback(arg->a, ft_lstnew(ft_atoc(argv[i], arg, &j)));
 			flag = 1;
 		}
 		if (flag == 0)
-			print_error(1, arg);
+			print_error(arg);
 	}
 }
 
@@ -89,7 +89,7 @@ void	check_overlap(t_arg *arg)
 		while (node2 != NULL)
 		{
 			if (node1->data == node2->data)
-				print_error(1, arg);
+				print_error(arg);
 			node2 = node2->prev;
 		}
 		node1 = node1->prev;

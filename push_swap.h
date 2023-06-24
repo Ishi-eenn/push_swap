@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 15:55:37 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/24 22:36:30 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/06/24 23:39:29 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int		ft_judge_swap(t_arg *arg, char type, int print);
 int		ft_judge_push(t_arg *arg, char type, int print);
 int		ft_judge_rotate(t_arg *arg, char type, int print);
 int		ft_judge_reverse_rotate(t_arg *arg, char type, int print);
-void	print_error(int code, t_arg *arg);
+void	print_error(t_arg *arg);
 void	ft_pushback(t_stack *stack, t_node *node);
 void	ft_free(t_arg *arg);
 void	ft_sort(t_arg *arg);

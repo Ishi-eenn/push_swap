@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 20:57:47 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/24 22:36:00 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/06/25 03:44:17 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int	ft_check_rotate(t_arg *arg, char *line)
 	return (ret);
 }
 
-int	ft_check_rrotate(t_arg *arg, char *line)
+int	ft_check_reverse_rotate(t_arg *arg, char *line)
 {
 	int	ret;
 

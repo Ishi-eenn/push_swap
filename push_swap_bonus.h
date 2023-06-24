@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 20:45:50 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/24 22:40:28 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/06/25 03:44:17 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ typedef struct s_arg
 int		ft_check_push(t_arg *arg, char *line);
 int		ft_check_swap(t_arg *arg, char *line);
 int		ft_check_rotate(t_arg *arg, char *line);
-int		ft_check_rrotate(t_arg *arg, char *line);
+int		ft_check_reverse_rotate(t_arg *arg, char *line);
 void	ft_free(t_arg *arg);
 void	get_stack_args(t_arg *arg, int argc, char *argv[]);
 void	check_sorted(t_arg *arg);
