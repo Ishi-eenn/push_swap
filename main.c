@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 16:00:31 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/24 20:14:20 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/06/24 20:20:31 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ int	main(int argc, char *argv[])
 	arg = (t_arg *)malloc(sizeof(t_arg));
 	if (arg == NULL)
 		return (0);
-	arg->a = ft_stacknew(); //stackの初期化
-	arg->b = ft_stacknew(); //stackの初期化
+	arg->a = ft_stacknew();
+	arg->b = ft_stacknew();
 	get_stack_args(arg, argc, argv);
 	check_overlap(arg);
 	check_sorted(arg);

@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 13:58:52 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/24 20:14:04 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/06/24 20:32:53 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ void	ft_get_rotate_num(t_arg *arg, int *a_cnt, int *b_cnt)
 			b_index = (arg->b->size - i) * (-1);
 		else
 			b_index = i;
-		if (!i || ft_abs(*a_cnt) + ft_abs(*b_cnt) > \
-			ft_abs(a_index) + ft_abs(b_index))
+		if (i == 0 || ft_abs(*a_cnt) + ft_abs(*b_cnt)
+			> ft_abs(a_index) + ft_abs(b_index))
 		{
 			*a_cnt = a_index;
 			*b_cnt = b_index;

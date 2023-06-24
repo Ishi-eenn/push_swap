@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 17:04:04 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/24 20:14:02 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/06/24 20:26:16 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ static int	ft_swap_b(t_arg *arg)
 
 int	ft_judge_swap(t_arg *arg, char type, int print)
 {
-	int result;
+	int	result;
+
 	if (type == 'a')
 	{
 		result = ft_swap_a(arg);

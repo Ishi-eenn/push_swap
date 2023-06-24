@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 15:55:37 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/24 20:14:13 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/06/24 20:34:33 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 # include <stdlib.h>
 # include <limits.h>
 # include <unistd.h>
-
-// # define INT_MAX 2147483647
-// # define INT_MIN -2147483648
 
 typedef struct s_node
 {
@@ -41,7 +38,7 @@ typedef struct s_arg
 	int				pivot[2];
 }	t_arg;
 
-t_node	*ft_nodenew(int data);
+t_node	*ft_lstnew(int data);
 void	ft_push(t_stack *stack, t_node *node);
 t_node	*ft_pop(t_stack *stack);
 t_stack	*ft_stacknew(void);
@@ -71,9 +68,8 @@ void	ft_rotate_all(t_arg *arg, int ra_cnt, int rb_cnt);
 void	ft_get_pivot(t_arg *arg);
 void	ft_last_rotate(t_arg *arg);
 int		ft_find_index(t_arg *arg, int data);
-
-int	ft_isspace(char c);
-int	ft_isdigit(int c);
+int		ft_isspace(char c);
+int		ft_isdigit(int c);
 void	ft_putstr_fd(char *s, int fd);
 
 #endif

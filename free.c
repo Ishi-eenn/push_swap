@@ -1,46 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.c                                            :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/24 19:53:50 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/24 20:26:00 by tsishika         ###   ########.fr       */
+/*   Created: 2023/06/20 20:17:10 by tsishika          #+#    #+#             */
+/*   Updated: 2023/06/24 20:35:24 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_isspace(char c)
+static void	free_stack(t_stack *stack)
 {
-	if ((c <= '\t' && c <= '\r') || c == ' ')
-		return (1);
-	return (0);
-}
+	t_node	*node;
+	t_node	*to_free;
 
-int	ft_isdigit(int c)
-{
-	if ('0' <= c && c <= '9')
-		return (1);
-	return (0);
-}
-
-static void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-}
-
-void	ft_putstr_fd(char *s, int fd)
-{
-	size_t	i;
-
-	if (s == NULL)
-		return ;
-	i = 0;
-	while (s[i] != '\0')
+	node = stack->top;
+	while (node != NULL)
 	{
-		ft_putchar_fd(s[i], fd);
-		i++;
+		to_free = node;
+		node = node->prev;
+		free(to_free);
 	}
+}
+
+void	ft_free(t_arg *arg)
+{
+	if (arg == NULL)
+		return ;
+	if (arg->a != NULL)
+	{
+		if (arg->a->size != 0)
+			free_stack(arg->a);
+		free(arg->a);
+	}
+	if (arg->b != NULL)
+	{
+		if (arg->b->size != 0)
+			free_stack(arg->b);
+		free(arg->b);
+	}
+	free(arg);
 }

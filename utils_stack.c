@@ -6,14 +6,13 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 16:13:00 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/24 20:14:01 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/06/24 20:34:33 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-t_node	*ft_nodenew(int data)
+t_node	*ft_lstnew(int data)
 {
 	t_node	*ret;
 
@@ -23,7 +22,6 @@ t_node	*ft_nodenew(int data)
 	ret->data = data;
 	ret->prev = 0;
 	ret->next = 0;
-	// printf("c : %p\n", ret);
 	return (ret);
 }
 
@@ -37,7 +35,6 @@ t_stack	*ft_stacknew(void)
 	ret->top = 0;
 	ret->bottom = 0;
 	ret->size = 0;
-	// printf("b : %p\n", ret);
 	return (ret);
 }
 
@@ -59,7 +56,6 @@ void	ft_pushback(t_stack *stack, t_node *node)
 		stack->top = node;
 		stack->bottom = node;
 	}
-	// free(node);
 	stack->size++;
 }
 

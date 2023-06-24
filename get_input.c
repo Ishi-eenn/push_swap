@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 17:20:47 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/24 20:14:23 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/06/24 20:34:33 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 static int	ft_atoc(const char *str, t_arg *arg, int *index)
 {
-	int			minus;
-	long long	result;
+	int			sign;
 	int			len;
+	long long	result;
 
-	minus = 1;
+	sign = 1;
 	len = 0;
 	if (str[*index] == '-' || str[*index] == '+')
-		if(str[(*index)++] == '-')
-			minus *= -1;
+		if (str[(*index)++] == '-')
+			sign *= -1;
 	result = 0;
 	while (ft_isdigit(str[*index]))
 	{
 		result = result * 10 + (str[(*index)++] - '0');
 		len++;
 	}
-	result = result * (minus);
+	result = result * (sign);
 	if (len > 10 || result < INT_MIN || result > INT_MAX || len == 0)
 		print_error(1, arg);
 	return ((int)result);
@@ -55,7 +55,7 @@ void	get_stack_args(t_arg *arg, int argc, char *argv[])
 			if (ft_isdigit(argv[i][j]) == 0
 			&& argv[i][j] != '-' && argv[i][j] != '+')
 				print_error(1, arg);
-			ft_pushback(arg->a, ft_nodenew(ft_atoc(argv[i], arg, &j)));
+			ft_pushback(arg->a, ft_lstnew(ft_atoc(argv[i], arg, &j)));
 			flag = 1;
 		}
 		if (flag == 0)
@@ -74,7 +74,6 @@ void	check_sorted(t_arg *arg)
 			return ;
 		node = node->prev;
 	}
-	// ft_free(arg);
 	exit(0);
 }
 
