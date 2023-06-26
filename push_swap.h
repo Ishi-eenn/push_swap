@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 15:55:37 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/24 23:39:29 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/06/26 15:25:52 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,19 +46,18 @@ int		ft_judge_swap(t_arg *arg, char type, int print);
 int		ft_judge_push(t_arg *arg, char type, int print);
 int		ft_judge_rotate(t_arg *arg, char type, int print);
 int		ft_judge_reverse_rotate(t_arg *arg, char type, int print);
-void	print_error(t_arg *arg);
+void	ft_print_error(t_arg *arg);
 void	ft_pushback(t_stack *stack, t_node *node);
 void	ft_free(t_arg *arg);
 void	ft_sort(t_arg *arg);
 void	ft_sort_three(t_arg *arg);
 void	ft_sort_four(t_arg *arg);
 void	ft_sort_five(t_arg *arg);
-void	get_stack_args(t_arg *arg, int argc, char *argv[]);
-void	check_sorted(t_arg *arg);
-void	check_overlap(t_arg *arg);
+void	ft_get_stack_args(t_arg *arg, int argc, char **argv);
+void	ft_check_sorted(t_arg *arg);
+void	ft_check_overlap(t_arg *arg);
 void	ft_sort_two(t_arg *arg, char type);
 int		ft_find_five_mid(t_stack *stack);
-void	ft_sort_three_mini(t_arg *arg);
 int		ft_abs(int data);
 int		ft_stack_find(t_stack *stack, int data);
 int		ft_get_stack_min(t_stack *stack);

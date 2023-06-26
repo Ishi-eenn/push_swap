@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 20:55:15 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/24 22:36:05 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/06/26 15:25:54 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ static int	ft_atoc(const char *str, t_arg *arg, int *index)
 	}
 	result = result * (sign);
 	if (len > 10 || result < INT_MIN || result > INT_MAX || len == 0)
-		print_error(arg);
+		ft_print_error(arg);
 	return ((int)result);
 }
 
-void	get_stack_args(t_arg *arg, int argc, char *argv[])
+void	ft_get_stack_args(t_arg *arg, int argc, char **argv)
 {
 	int	i;
 	int	j;
@@ -54,16 +54,16 @@ void	get_stack_args(t_arg *arg, int argc, char *argv[])
 				break ;
 			if (ft_isdigit(argv[i][j]) == 0
 			&& argv[i][j] != '-' && argv[i][j] != '+')
-				print_error(arg);
+				ft_print_error(arg);
 			ft_pushback(arg->a, ft_lstnew(ft_atoc(argv[i], arg, &j)));
 			flag = 1;
 		}
 		if (flag == 0)
-			print_error(arg);
+			ft_print_error(arg);
 	}
 }
 
-void	check_sorted(t_arg *arg)
+void	ft_check_sorted(t_arg *arg)
 {
 	t_node	*node;
 
@@ -77,7 +77,7 @@ void	check_sorted(t_arg *arg)
 	exit(0);
 }
 
-void	check_overlap(t_arg *arg)
+void	ft_check_overlap(t_arg *arg)
 {
 	t_node	*node1;
 	t_node	*node2;
@@ -89,7 +89,7 @@ void	check_overlap(t_arg *arg)
 		while (node2 != NULL)
 		{
 			if (node1->data == node2->data)
-				print_error(arg);
+				ft_print_error(arg);
 			node2 = node2->prev;
 		}
 		node1 = node1->prev;

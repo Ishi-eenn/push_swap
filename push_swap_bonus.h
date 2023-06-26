@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 20:45:50 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/25 03:44:17 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/06/26 15:26:51 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,8 @@ int		ft_check_swap(t_arg *arg, char *line);
 int		ft_check_rotate(t_arg *arg, char *line);
 int		ft_check_reverse_rotate(t_arg *arg, char *line);
 void	ft_free(t_arg *arg);
-void	get_stack_args(t_arg *arg, int argc, char *argv[]);
-void	check_sorted(t_arg *arg);
-void	check_overlap(t_arg *arg);
+void	ft_get_stack_args(t_arg *arg, int argc, char **argv);
+void	ft_check_overlap(t_arg *arg);
 int		ft_isspace(char c);
 int		ft_isdigit(int c);
 size_t	ft_strlen(const char *s);
@@ -69,6 +68,6 @@ char	*ft_strdup(const char *s1);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*get_next_line(int fd);
-void	print_error(t_arg *arg);
+void	ft_print_error(t_arg *arg);
 
 #endif
