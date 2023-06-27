@@ -30,4 +30,7 @@ fclean:
 
 re: fclean all
 
+visual:
+	bash visualizar/pain.sh
+
 .PHONY : all clean fclean re
