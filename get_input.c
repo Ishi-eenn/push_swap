@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 17:20:47 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/27 11:31:30 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/06/28 15:40:11 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,10 @@ static int	ft_atoc(const char *str, t_arg *arg, int *index)
 
 void	ft_get_stack_args(t_arg *arg, int argc, char **argv)
 {
-	int	i;
-	int	j;
-	int	flag;
+	int		i;
+	int		j;
+	int		flag;
+	t_node	*buff;
 
 	i = 0;
 	while (++i < argc)
@@ -55,7 +56,10 @@ void	ft_get_stack_args(t_arg *arg, int argc, char **argv)
 			if (ft_isdigit(argv[i][j]) == 0
 			&& argv[i][j] != '-' && argv[i][j] != '+')
 				ft_print_error(arg);
-			ft_pushback(arg->a, ft_lstnew(ft_atoc(argv[i], arg, &j)));
+			buff = ft_lstnew(ft_atoc(argv[i], arg, &j));
+			if (buff == NULL)
+				ft_free_malloc_error(arg);
+			ft_pushback(arg->a, buff);
 			flag = 1;
 		}
 		if (flag == 0)

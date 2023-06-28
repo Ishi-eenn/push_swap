@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 15:55:37 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/27 11:11:48 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/06/28 15:31:17 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int		ft_judge_reverse_rotate(t_arg *arg, char type, int print);
 void	ft_print_error(t_arg *arg);
 void	ft_pushback(t_stack *stack, t_node *node);
 void	ft_free(t_arg *arg);
+void	ft_free_malloc_error(t_arg *arg);
 void	ft_sort(t_arg *arg);
 void	ft_sort_three(t_arg *arg);
 void	ft_sort_four(t_arg *arg);

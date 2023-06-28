@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 20:17:10 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/27 11:33:01 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/06/28 15:31:21 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,24 @@ void	ft_free(t_arg *arg)
 		free(arg->b);
 	}
 	free(arg);
+}
+
+void	ft_free_malloc_error(t_arg *arg)
+{
+	if (arg == NULL)
+		return ;
+	if (arg->a != NULL)
+	{
+		if (arg->a->size != 0)
+			free_stack(arg->a);
+		free(arg->a);
+	}
+	if (arg->b != NULL)
+	{
+		if (arg->b->size != 0)
+			free_stack(arg->b);
+		free(arg->b);
+	}
+	free(arg);
+	exit(1);
 }
