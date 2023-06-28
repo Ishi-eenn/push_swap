@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 17:20:47 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/28 15:40:11 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/06/28 15:53:43 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,34 +35,30 @@ static int	ft_atoc(const char *str, t_arg *arg, int *index)
 	return ((int)result);
 }
 
-void	ft_get_stack_args(t_arg *arg, int argc, char **argv)
+void	ft_get_stack_args(t_arg *arg, int ac, char **av)
 {
 	int		i;
 	int		j;
-	int		flag;
 	t_node	*buff;
 
 	i = 0;
-	while (++i < argc)
+	while (++i < ac)
 	{
 		j = 0;
-		flag = 0;
-		while (argv[i][j] != '\0')
+		while (av[i][j] != '\0')
 		{
-			while (argv[i][j] != '\0' && ft_isspace(argv[i][j]) != 0)
+			while (av[i][j] != '\0' && ft_isspace(av[i][j]) != 0)
 				j++;
-			if (argv[i][j] == '\0')
+			if (av[i][j] == '\0')
 				break ;
-			if (ft_isdigit(argv[i][j]) == 0
-			&& argv[i][j] != '-' && argv[i][j] != '+')
+			if (ft_isdigit(av[i][j]) == 0 && av[i][j] != '-' && av[i][j] != '+')
 				ft_print_error(arg);
-			buff = ft_lstnew(ft_atoc(argv[i], arg, &j));
+			buff = ft_lstnew(ft_atoc(av[i], arg, &j));
 			if (buff == NULL)
 				ft_free_malloc_error(arg);
 			ft_pushback(arg->a, buff);
-			flag = 1;
 		}
-		if (flag == 0)
+		if (j == 0)
 			ft_print_error(arg);
 	}
 }

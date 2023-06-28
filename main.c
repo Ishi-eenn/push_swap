@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 16:00:31 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/28 15:39:05 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/06/28 15:51:11 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ static void	ft_push_swap(t_arg *arg)
 		ft_sort(arg);
 }
 
-int	main(int argc, char **argv)
+int	main(int ac, char **av)
 {
 	t_arg	*arg;
 
-	if (argc <= 1)
+	if (ac <= 1)
 		return (0);
 	arg = malloc(sizeof(t_arg));
 	if (arg == NULL)
@@ -40,7 +40,7 @@ int	main(int argc, char **argv)
 	arg->b = ft_stacknew();
 	if (arg->a == NULL || arg->b == NULL)
 		ft_free_malloc_error(arg);
-	ft_get_stack_args(arg, argc, argv);
+	ft_get_stack_args(arg, ac, av);
 	ft_check_overlap(arg);
 	ft_check_sorted(arg);
 	ft_push_swap(arg);
