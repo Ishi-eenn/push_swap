@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 20:55:15 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/28 15:51:11 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/06/29 09:19:54 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,28 +37,28 @@ static int	ft_atoc(const char *str, t_arg *arg, int *index)
 
 void	ft_get_stack_args(t_arg *arg, int ac, char **av)
 {
-	int	i;
-	int	j;
-	int	flag;
+	int		i;
+	int		j;
+	t_node	*buff;
 
 	i = 0;
 	while (++i < ac)
 	{
 		j = 0;
-		flag = 0;
 		while (av[i][j] != '\0')
 		{
 			while (av[i][j] != '\0' && ft_isspace(av[i][j]) != 0)
 				j++;
 			if (av[i][j] == '\0')
 				break ;
-			if (ft_isdigit(av[i][j]) == 0
-			&& av[i][j] != '-' && av[i][j] != '+')
+			if (ft_isdigit(av[i][j]) == 0 && av[i][j] != '-' && av[i][j] != '+')
 				ft_print_error(arg);
-			ft_pushback(arg->a, ft_lstnew(ft_atoc(av[i], arg, &j)));
-			flag = 1;
+			buff = ft_lstnew(ft_atoc(av[i], arg, &j));
+			if (buff == NULL)
+				ft_free_malloc_error(arg);
+			ft_pushback(arg->a, buff);
 		}
-		if (flag == 0)
+		if (j == 0)
 			ft_print_error(arg);
 	}
 }

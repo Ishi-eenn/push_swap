@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 21:01:57 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/28 15:51:11 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/06/29 09:17:52 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	ft_check_sorted(t_arg *arg)
 
 	node = arg->a->top;
 	flag = 1;
-	while (node->prev)
+	while (node->prev != NULL)
 	{
 		if (node->data > node->prev->data)
 		{
@@ -57,7 +57,7 @@ static void	ft_do_sort(t_arg *arg)
 	while (1)
 	{
 		line = get_next_line(0);
-		if (!line)
+		if (line == NULL)
 			ft_check_sorted(arg);
 		result = ft_check_push(arg, line) + ft_check_swap(arg, line)
 			+ ft_check_rotate(arg, line) + ft_check_reverse_rotate(arg, line);
@@ -74,10 +74,12 @@ int	main(int ac, char **av)
 	if (ac <= 1)
 		return (0);
 	arg = (t_arg *)malloc(sizeof(t_arg));
-	if (!arg)
+	if (arg == NULL)
 		return (0);
 	arg->a = ft_stacknew();
 	arg->b = ft_stacknew();
+	if (arg->a == NULL || arg->b == NULL)
+		ft_free_malloc_error(arg);
 	ft_get_stack_args(arg, ac, av);
 	ft_check_overlap(arg);
 	ft_do_sort(arg);
