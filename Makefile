@@ -4,7 +4,7 @@ SRCS		= main.c utils.c free.c utils_stack.c sort.c sort_utils.c get_input.c sort
 			push.c rotate.c reverse_rotate.c swap.c libft.c
 BONUS_SRCS	= checker_bonus.c check_operations_bonus.c free_bonus.c utils_stack_bonus.c get_input_bonus.c \
 				push_bonus.c rotate_bonus.c reverse_rotate_bonus.c swap_bonus.c libft_bonus.c \
-				get_next_line_bonus.c get_next_line_utils_bonus.c
+				get_next_line_bonus.c get_next_line_utils_bonus.c utils_bonus.c
 OBJS		= $(SRCS:.c=.o)
 BONUS_OBJS	= $(BONUS_SRCS:.c=.o)
 NAME		= push_swap

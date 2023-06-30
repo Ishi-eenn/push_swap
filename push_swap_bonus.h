@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 20:45:50 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/29 09:14:41 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/07/01 00:33:39 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ int		ft_check_swap(t_arg *arg, char *line);
 int		ft_check_rotate(t_arg *arg, char *line);
 int		ft_check_reverse_rotate(t_arg *arg, char *line);
 void	ft_free(t_arg *arg);
-void	ft_free_malloc_error(t_arg *arg);
 void	ft_get_stack_args(t_arg *arg, int ac, char **av);
 void	ft_check_overlap(t_arg *arg);
 int		ft_isspace(char c);

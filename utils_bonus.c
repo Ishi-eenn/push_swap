@@ -1,46 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_bonus.c                                       :+:      :+:    :+:   */
+/*   utils_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/24 20:50:48 by tsishika          #+#    #+#             */
-/*   Updated: 2023/07/01 00:33:09 by tsishika         ###   ########.fr       */
+/*   Created: 2023/07/01 00:38:31 by tsishika          #+#    #+#             */
+/*   Updated: 2023/07/01 00:50:22 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-static void	free_stack(t_stack *stack)
+void	ft_check_sorted(t_arg *arg)
 {
 	t_node	*node;
-	t_node	*to_free;
 
-	node = stack->top;
-	while (node != NULL)
+	node = arg->a->top;
+	while (node->prev)
 	{
-		to_free = node;
+		if (node->data > node->prev->data)
+			return ;
 		node = node->prev;
-		free(to_free);
 	}
+	exit(0);
 }
 
-void	ft_free(t_arg *arg)
+void	ft_check_overlap(t_arg *arg)
 {
-	if (arg == NULL)
-		return ;
-	if (arg->a != NULL)
+	t_node	*node1;
+	t_node	*node2;
+
+	node1 = arg->a->top;
+	while (node1 != NULL)
 	{
-		if (arg->a->size != 0)
-			free_stack(arg->a);
-		free(arg->a);
+		node2 = node1->prev;
+		while (node2 != NULL)
+		{
+			if (node1->data == node2->data)
+				ft_print_error(arg);
+			node2 = node2->prev;
+		}
+		node1 = node1->prev;
 	}
-	if (arg->b != NULL)
-	{
-		if (arg->b->size != 0)
-			free_stack(arg->b);
-		free(arg->b);
-	}
-	free(arg);
 }

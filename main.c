@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 16:00:31 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/28 15:51:11 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/07/01 00:35:53 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	main(int ac, char **av)
 	arg->a = ft_stacknew();
 	arg->b = ft_stacknew();
 	if (arg->a == NULL || arg->b == NULL)
-		ft_free_malloc_error(arg);
+		ft_print_error(arg);
 	ft_get_stack_args(arg, ac, av);
 	ft_check_overlap(arg);
 	ft_check_sorted(arg);
@@ -50,5 +50,5 @@ int	main(int ac, char **av)
 
 // __attribute__((destructor)) static void destructor()
 // {
-//     system("leaks -q push_swap");
+// 	system("leaks -q push_swap");
 // }

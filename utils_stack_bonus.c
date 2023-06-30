@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 20:52:15 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/29 09:23:13 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/06/30 11:23:26 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,4 +101,3 @@ t_node	*ft_pop(t_stack *stack)
 	stack->size--;
 	return (ret);
 }
-
