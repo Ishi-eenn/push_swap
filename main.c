@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 16:00:31 by tsishika          #+#    #+#             */
-/*   Updated: 2023/07/01 00:35:53 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/07/01 11:32:26 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(int ac, char **av)
 		return (0);
 	arg = malloc(sizeof(t_arg));
 	if (arg == NULL)
-		return (0);
+		ft_print_error(arg);
 	arg->a = ft_stacknew();
 	arg->b = ft_stacknew();
 	if (arg->a == NULL || arg->b == NULL)
@@ -50,5 +50,5 @@ int	main(int ac, char **av)
 
 // __attribute__((destructor)) static void destructor()
 // {
-// 	system("leaks -q push_swap");
+//     system("leaks -q push_swap");
 // }

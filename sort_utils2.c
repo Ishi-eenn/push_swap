@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 15:50:15 by tsishika          #+#    #+#             */
-/*   Updated: 2023/06/27 11:09:36 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/06/29 11:58:19 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,8 @@ void	ft_sort_three(t_arg *arg)
 	data[2] = arg->a->top->prev->prev->data;
 	if (data[0] < data[2] && data[2] < data[1])
 	{
-		ft_judge_rotate(arg, 'a', 1);
 		ft_judge_swap(arg, 'a', 1);
-		ft_judge_reverse_rotate(arg, 'a', 1);
+		ft_judge_rotate(arg, 'a', 1);
 	}
 	else if (data[1] < data[0] && data[0] < data[2])
 		ft_judge_swap(arg, 'a', 1);

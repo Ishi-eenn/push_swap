@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 21:01:57 by tsishika          #+#    #+#             */
-/*   Updated: 2023/07/01 00:33:03 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/06/29 12:20:21 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int	main(int ac, char **av)
 		return (0);
 	arg = (t_arg *)malloc(sizeof(t_arg));
 	if (arg == NULL)
-		return (0);
+		ft_print_error(arg);
 	arg->a = ft_stacknew();
 	arg->b = ft_stacknew();
 	if (arg->a == NULL || arg->b == NULL)
