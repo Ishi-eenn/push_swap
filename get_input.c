@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 17:20:47 by tsishika          #+#    #+#             */
-/*   Updated: 2023/07/01 16:09:46 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/07/02 21:32:14 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,21 @@ static int	ft_atoc(const char *str, t_arg *arg, int *index)
 	return ((int)result);
 }
 
+static void	ft_judge_pb(const char *str, t_arg *arg, int *index)
+{
+	t_node	*buff;
+
+	buff = ft_lstnew(ft_atoc(str, arg, index));
+	if (buff == NULL)
+		ft_print_error(arg);
+	ft_pushback(arg->a, buff);
+}
+
 void	ft_get_stack_args(t_arg *arg, int ac, char **av)
 {
 	int		i;
 	int		j;
 	int		flag;
-	t_node	*buff;
 
 	i = 0;
 	while (++i < ac)
@@ -53,14 +62,11 @@ void	ft_get_stack_args(t_arg *arg, int ac, char **av)
 				j++;
 			if (av[i][j] == '\0' && flag == 1)
 				break ;
-			if(av[i][j] == '\0' && flag == 0)
+			if (av[i][j] == '\0' && flag == 0)
 				ft_print_error(arg);
 			if (ft_isdigit(av[i][j]) == 0 && av[i][j] != '-' && av[i][j] != '+')
 				ft_print_error(arg);
-			buff = ft_lstnew(ft_atoc(av[i], arg, &j));
-			if (buff == NULL)
-				ft_print_error(arg);
-			ft_pushback(arg->a, buff);
+			ft_judge_pb(av[i], arg, &j);
 			flag = 1;
 		}
 		if (j == 0)
