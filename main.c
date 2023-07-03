@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 16:00:31 by tsishika          #+#    #+#             */
-/*   Updated: 2023/07/01 11:32:26 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/07/03 13:22:07 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,9 @@ int	main(int ac, char **av)
 	ft_check_overlap(arg);
 	ft_check_sorted(arg);
 	ft_push_swap(arg);
+	// printf("%d\n", arg->a->top->data);
+	// printf("%d\n", arg->a->top->prev->data);
+	// printf("%d\n", arg->a->bottom->data);
 	ft_free(arg);
 	return (0);
 }
