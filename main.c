@@ -6,12 +6,11 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 16:00:31 by tsishika          #+#    #+#             */
-/*   Updated: 2023/07/03 13:22:07 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/07/04 11:00:06 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 static void	ft_push_swap(t_arg *arg)
 {
@@ -44,14 +43,11 @@ int	main(int ac, char **av)
 	ft_check_overlap(arg);
 	ft_check_sorted(arg);
 	ft_push_swap(arg);
-	// printf("%d\n", arg->a->top->data);
-	// printf("%d\n", arg->a->top->prev->data);
-	// printf("%d\n", arg->a->bottom->data);
 	ft_free(arg);
 	return (0);
 }
 
 // __attribute__((destructor)) static void destructor()
 // {
-//     system("leaks -q push_swap");
+// 	system("leaks -q push_swap");
 // }

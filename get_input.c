@@ -6,7 +6,7 @@
 /*   By: tsishika <tsishika@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 17:20:47 by tsishika          #+#    #+#             */
-/*   Updated: 2023/07/03 14:06:47 by tsishika         ###   ########.fr       */
+/*   Updated: 2023/07/04 10:52:49 by tsishika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,41 +45,10 @@ static void	ft_judge_pb(const char *str, t_arg *arg, int *index)
 	ft_pushback(arg->a, buff);
 }
 
-// void	ft_get_stack_args(t_arg *arg, int ac, char **av)
-// {
-// 	int		i;
-// 	int		j;
-// 	int		flag;
-
-// 	i = 0;
-// 	while (++i < ac)
-// 	{
-// 		j = 0;
-// 		flag = 0;
-// 		while (av[i][j] != '\0')
-// 		{
-// 			while (av[i][j] != '\0' && ft_isspace(av[i][j]) != 0)
-// 				j++;
-// 			if (av[i][j] == '\0' && flag == 1)
-// 				break ;
-// 			if ((av[i][j] == '\0' && flag == 0))
-// 				ft_print_error(arg);
-// 			if (ft_isdigit(av[i][j]) == 0 && av[i][j] != '-' && av[i][j] != '+')
-// 				ft_print_error(arg);
-// 			ft_judge_pb(av[i], arg, &j);
-// 			if (ft_isspace(av[i][j]) == 0 && av[i][j] != '\0')
-// 				ft_print_error(arg);
-// 			flag = 1;
-// 		}
-// 		if (j == 0)
-// 			ft_print_error(arg);
-// 	}
-// }
-
-static void ft_get_str(t_arg *arg, char *str)
+static void	ft_get_str(t_arg *arg, char *str)
 {
-	int j;
-	int flag;
+	int	j;
+	int	flag;
 
 	j = 0;
 	flag = 0;
@@ -112,38 +81,5 @@ void	ft_get_stack_args(t_arg *arg, int ac, char **av)
 	{
 		str = av[i];
 		ft_get_str(arg, str);
-	}
-}
-
-void	ft_check_sorted(t_arg *arg)
-{
-	t_node	*node;
-
-	node = arg->a->top;
-	while (node->prev)
-	{
-		if (node->data > node->prev->data)
-			return ;
-		node = node->prev;
-	}
-	exit(0);
-}
-
-void	ft_check_overlap(t_arg *arg)
-{
-	t_node	*node1;
-	t_node	*node2;
-
-	node1 = arg->a->top;
-	while (node1 != NULL)
-	{
-		node2 = node1->prev;
-		while (node2 != NULL)
-		{
-			if (node1->data == node2->data)
-				ft_print_error(arg);
-			node2 = node2->prev;
-		}
-		node1 = node1->prev;
 	}
 }
