@@ -1,7 +1,7 @@
 CC			= cc
 CFLAGS		= -Wall -Werror -Wextra
 SRCS		= main.c utils.c free.c utils_stack.c sort.c sort_utils.c get_input.c sort_utils2.c \
-			push.c rotate.c reverse_rotate.c swap.c libft.c check.c
+				push.c rotate.c reverse_rotate.c swap.c libft.c check.c
 BONUS_SRCS	= checker_bonus.c check_operations_bonus.c free_bonus.c utils_stack_bonus.c get_input_bonus.c \
 				push_bonus.c rotate_bonus.c reverse_rotate_bonus.c swap_bonus.c libft_bonus.c \
 				get_next_line_bonus.c get_next_line_utils_bonus.c check_bonus.c
