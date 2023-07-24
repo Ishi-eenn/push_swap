@@ -1,3 +1,3 @@
 push_swap_tester
-test.sh
-.gitignore
+.DS_STORE
+.vscode

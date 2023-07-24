@@ -30,4 +30,10 @@ fclean:
 
 re: fclean all
 
+test: all bonus
+	bash test.sh
+
+visual: all
+	bash pain.sh
+
 .PHONY : all clean fclean re
