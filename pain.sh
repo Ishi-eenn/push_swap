@@ -1,6 +1,5 @@
 #!/bin/bash
 NBR_COUNT=100
-##
 NBR=$(seq 1 $NBR_COUNT | sort -R | tr '\n' ' ' | rev | cut -c 2- | rev)
 # NBR="1 2 3 4 5"6 7" 8"
 #NBR=$(seq 1 $NBR_COUNT | tr '\n' ' ' | rev | cut -c 2- | rev)
